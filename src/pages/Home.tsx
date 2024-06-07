@@ -1,8 +1,12 @@
 import { FC } from 'react'
+import Button from '../components/Button/Button'
+import SearchIcon from '../assets/icons/SearchIcon'
 
 const Home: FC = () => {
   return (
-    <div>Home</div>
+    <header>
+      <Button onClick={() => {}} text="Search" icon={<SearchIcon />} />
+    </header>
   )
 }
 
