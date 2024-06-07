@@ -1,17 +1,18 @@
 import { FC } from 'react'
-import { CryptoCurrency } from '@/lib/cryptoCurrencyData'
-import StarFullIcon from '@/assets/icons/StarFullIcon'
-import StarIcon from '@/assets/icons/StarIcon'
+import StarFullIcon from '../../../assets/icons/StarFullIcon'
+import StarIcon from '../../../assets/icons/StarIcon'
+import styles from './CurrencyItem.module.css'
 
 interface CurrencyItemProps {
-  currency: CryptoCurrency
+  currencyName: string
+  isFavorite: boolean
 }
 
-const CurrencyItem: FC<CurrencyItemProps> = ({ currency }) => {
+const CurrencyItem: FC<CurrencyItemProps> = ({ currencyName, isFavorite }) => {
   return (
-    <li>
-      {currency.isFavorite ? <StarFullIcon /> : <StarIcon />}
-      {currency.currencyName}
+    <li className={styles.currencyItem}>
+      {isFavorite ? <StarFullIcon /> : <StarIcon />}
+      {currencyName}
     </li>
   )
 }

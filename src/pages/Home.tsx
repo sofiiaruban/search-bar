@@ -4,26 +4,33 @@ import SearchIcon from '../assets/icons/SearchIcon'
 import Dropdown from '../components/Dropdown/Dropdown'
 import SearchBar from '../components/SearchBar/SearchBar'
 import CloseIcon from '../assets/icons/CloseIcon'
+import CurrencyList from '../components/CurrencyList/CurrencyList'
+import { cryptoCurrencies } from '../lib/cryptoCurrencyData'
+import RadioGroup from '../components/RadioGroup/RadioGroup'
+import styles from './Home.module.css'
 
 const Home: FC = () => {
-  const [isDropdownOpen] = useState(false) //, setDropdownOpen
+  const [isDropdownOpen, setDropdownOpen] = useState(false) //,
 
   const buttonRef = useRef<HTMLButtonElement>(null)
+
   return (
-    <header>
+    <header className={styles.header}>
       <Button
         ref={buttonRef}
-        onClick={() => {}}
         text="Search"
         icon={<SearchIcon />}
+        onClick={() => setDropdownOpen(!isDropdownOpen)}
       />
+
       <Dropdown isOpen={isDropdownOpen} targetRef={buttonRef}>
         <SearchBar
-          placeholder="Search"
+          placeholder="Search..."
           icon={<SearchIcon />}
           children={<CloseIcon />}
         />
-        ghjjk
+        <RadioGroup />
+        <CurrencyList currencyList={cryptoCurrencies} />
       </Dropdown>
     </header>
   )

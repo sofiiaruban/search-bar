@@ -3,4 +3,9 @@
   background-color: transparent;
   border: 1px solid #4a494a;
   border-radius: 0.5rem;
+  padding-top: 1rem;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }

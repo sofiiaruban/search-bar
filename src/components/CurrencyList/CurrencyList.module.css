@@ -1,0 +1,10 @@
+.currencyList {
+  list-style: none;
+  padding-left: 0;
+  background-color: #0a0909;
+  padding: 0.5rem 1rem 1rem 1rem;
+  margin: 0;
+  color: #aba7a7;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}

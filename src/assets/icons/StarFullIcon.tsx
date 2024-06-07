@@ -1,17 +1,23 @@
 import { FC } from 'react'
 
-const StarFullIcon: FC = () => {
+interface StarFullIconProps {
+  filledColor?: string
+}
+
+const StarFullIcon: FC<StarFullIconProps> = ({ filledColor = '#ABA7A7' }) => {
   return (
     <svg
-      width="40"
-      height="39"
-      viewBox="0 0 40 39"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M17.8542 1.33179L12.972 11.2308L2.04863 12.8234C0.089755 13.1075 -0.69529 15.5224 0.725268 16.9056L8.62806 24.6065L6.7589 35.485C6.42245 37.4513 8.49348 38.9242 10.2281 38.0046L20 32.8682L29.7719 38.0046C31.5065 38.9168 33.5775 37.4513 33.2411 35.485L31.3719 24.6065L39.2747 16.9056C40.6953 15.5224 39.9102 13.1075 37.9514 12.8234L27.028 11.2308L22.1458 1.33179C21.271 -0.432696 18.7365 -0.455126 17.8542 1.33179Z"
-        fill="white"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M12.2786 7.50286L10 0L7.72143 7.50286H0L6.24714 12.36L3.92857 20L10 15.2786L16.0714 20L13.7529 12.36L20 7.50286H12.2786Z"
+        fill={filledColor}
       />
     </svg>
   )

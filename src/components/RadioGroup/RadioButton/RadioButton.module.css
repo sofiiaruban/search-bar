@@ -1,0 +1,9 @@
+.radio {
+  text-transform: uppercase;
+  display: flex;
+  gap: 0.5rem;
+
+  & input {
+    display: none;
+  }
+}

@@ -10,6 +10,8 @@ interface ButtonProps {
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ text, onClick, icon, type = 'button' }, ref) => {
+    if (!ref) return
+
     return (
       <button type={type} onClick={onClick} className={styles.button} ref={ref}>
         <span>{icon}</span>

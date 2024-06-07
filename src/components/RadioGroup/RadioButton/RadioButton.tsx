@@ -1,24 +1,25 @@
 import { FC } from 'react'
+import styles from './RadioButton.module.css'
 
 interface RadioButtonProps {
-  icon: React.ReactNode
-  title: string
+  label: string
   name: string
   value: string
+  icon?: React.ReactNode
   checked?: boolean
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 const RadioButton: FC<RadioButtonProps> = ({
   icon,
-  title,
+  label,
   name,
   value,
   checked,
   onChange
 }) => {
   return (
-    <label>
+    <div className={styles.radio}>
       <input
         type="radio"
         name={name}
@@ -27,8 +28,10 @@ const RadioButton: FC<RadioButtonProps> = ({
         onChange={onChange}
       />
       <span>{icon}</span>
-      <span>{title}</span>
-    </label>
+      <label>
+        <span>{label}</span>
+      </label>
+    </div>
   )
 }
 

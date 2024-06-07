@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { createPortal } from 'react-dom'
+import styles from './DropDown.module.css'
 
 interface DropdownProps {
   isOpen: boolean
@@ -8,12 +9,12 @@ interface DropdownProps {
 }
 
 const Dropdown: FC<DropdownProps> = ({ isOpen, children, targetRef }) => {
-  if (!isOpen) return null
+  if (!isOpen || !targetRef.current) return null
 
-  const { top, left, height } = targetRef.current!.getBoundingClientRect()
+  const { top, height } = targetRef.current!.getBoundingClientRect()
 
   return createPortal(
-    <div className="dropdown" style={{ top: top + height, left }}>
+    <div className={styles.dropdown} style={{ top: top + height }}>
       {children}
     </div>,
     document.body
