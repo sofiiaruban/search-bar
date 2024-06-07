@@ -9,9 +9,12 @@ import { cryptoCurrencies } from '../lib/cryptoCurrencyData'
 import RadioGroup from '../components/RadioGroup/RadioGroup'
 import styles from './Home.module.css'
 import useDropdown from '../hooks/useDropdown'
+import ButtonIcon from '../components/ButtonIcon/ButtonIcon'
+import useSearchBar from '../hooks/useSearchBar'
 
 const Home: FC = () => {
   const { toggleDropdown, closeDropdown, isDropdownOpen } = useDropdown()
+  const { searchValue, handleSearchChange, clearSearch } = useSearchBar()
 
   const buttonRef = useRef<HTMLButtonElement>(null)
 
@@ -22,8 +25,8 @@ const Home: FC = () => {
         text="Search"
         icon={<SearchIcon />}
         onClick={toggleDropdown}
+        isButtonActive={isDropdownOpen}
       />
-
       <Dropdown
         isOpen={isDropdownOpen}
         targetRef={buttonRef}
@@ -32,8 +35,13 @@ const Home: FC = () => {
         <SearchBar
           placeholder="Search..."
           icon={<SearchIcon />}
-          children={<CloseIcon />}
-        />
+          value={searchValue}
+          onChange={handleSearchChange}
+        >
+          <ButtonIcon onClick={clearSearch} isVisible={searchValue.length > 0}>
+            <CloseIcon />
+          </ButtonIcon>
+        </SearchBar>
         <RadioGroup />
         <CurrencyList currencyList={cryptoCurrencies} />
       </Dropdown>

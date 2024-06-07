@@ -1,0 +1,10 @@
+.buttonIcon {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}

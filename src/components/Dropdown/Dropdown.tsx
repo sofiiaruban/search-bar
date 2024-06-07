@@ -2,6 +2,7 @@ import { FC, MouseEventHandler } from 'react'
 import { createPortal } from 'react-dom'
 import styles from './DropDown.module.css'
 import { Overlay } from '../Overlay/Overlay'
+import useDropdown from '../../hooks/useDropdown'
 
 interface DropdownProps {
   isOpen: boolean
@@ -16,13 +17,18 @@ const Dropdown: FC<DropdownProps> = ({
   targetRef,
   onClick
 }) => {
+  const { dropdownPropagationHandle } = useDropdown()
   if (!isOpen || !targetRef.current) return null
 
   const { top, height } = targetRef.current!.getBoundingClientRect()
 
   return createPortal(
     <Overlay onClick={onClick}>
-      <div className={styles.dropdown} style={{ top: top + height }}>
+      <div
+        className={styles.dropdown}
+        style={{ top: top + height + '5px' }}
+        onClick={dropdownPropagationHandle}
+      >
         {children}
       </div>
     </Overlay>,

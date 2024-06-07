@@ -8,15 +8,17 @@
   color: #ffffff;
   text-transform: uppercase;
   font-size: 20px;
-  padding: 0.5rem 0.8rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
   z-index: 10;
-  
-  & .active {
-    border: 2px solid #4a494a;
-    background-color: #3a383a;
-  }
+  box-sizing: border-box;
+  border: 2px solid transparent;
 }
 .button:hover {
   background-color: #3a383a;
-  border-radius: 0.5rem;
+}
+
+.active {
+  border-color: #4a494a;
+  background-color: #3a383a;
 }

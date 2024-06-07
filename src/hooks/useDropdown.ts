@@ -1,12 +1,13 @@
 import { MouseEventHandler, useState } from 'react'
 
-interface ModalHookReturnType {
+interface DropdownHookReturnType {
   toggleDropdown: () => void
   closeDropdown: MouseEventHandler<HTMLElement>
+  dropdownPropagationHandle: MouseEventHandler<HTMLDivElement>
   isDropdownOpen: boolean
 }
 
-const useDropdown = (): ModalHookReturnType => {
+const useDropdown = (): DropdownHookReturnType => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
   const toggleDropdown = () => {
@@ -17,10 +18,17 @@ const useDropdown = (): ModalHookReturnType => {
     setIsDropdownOpen(false)
   }
 
+  const dropdownPropagationHandle: MouseEventHandler<HTMLDivElement> = (
+    event
+  ) => {
+    event.stopPropagation()
+  }
+
   return {
     toggleDropdown,
     closeDropdown,
-    isDropdownOpen
+    isDropdownOpen,
+    dropdownPropagationHandle
   }
 }
 
