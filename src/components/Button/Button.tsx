@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { forwardRef } from 'react'
 import styles from './Button.module.css'
 
 interface ButtonProps {
@@ -8,13 +8,15 @@ interface ButtonProps {
   type?: 'button' | 'submit' | 'reset'
 }
 
-const Button: FC<ButtonProps> = ({ text, onClick, icon, type = 'button' }) => {
-  return (
-    <button type={type} onClick={onClick} className={styles.button}>
-      <span>{icon}</span>
-      <span>{text}</span>
-    </button>
-  )
-}
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ text, onClick, icon, type = 'button' }, ref) => {
+    return (
+      <button type={type} onClick={onClick} className={styles.button} ref={ref}>
+        <span>{icon}</span>
+        <span>{text}</span>
+      </button>
+    )
+  }
+)
 
 export default Button

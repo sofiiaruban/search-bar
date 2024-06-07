@@ -1,4 +1,4 @@
-interface CryptoCurrency {
+export interface CryptoCurrency {
   id: number
   currencyName: string
   isFavorite: boolean

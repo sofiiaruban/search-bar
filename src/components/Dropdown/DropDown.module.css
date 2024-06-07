@@ -1,0 +1,6 @@
+.dropdown {
+  width: fit-content;
+  background-color: transparent;
+  border: 1px solid #4a494a;
+  border-radius: 0.5rem;
+}
