@@ -1,22 +1,31 @@
-import { FC } from 'react'
+import { FC, MouseEventHandler } from 'react'
 import { createPortal } from 'react-dom'
 import styles from './DropDown.module.css'
+import { Overlay } from '../Overlay/Overlay'
 
 interface DropdownProps {
   isOpen: boolean
   children: React.ReactNode
   targetRef: React.RefObject<HTMLElement>
+  onClick: MouseEventHandler<HTMLDivElement>
 }
 
-const Dropdown: FC<DropdownProps> = ({ isOpen, children, targetRef }) => {
+const Dropdown: FC<DropdownProps> = ({
+  isOpen,
+  children,
+  targetRef,
+  onClick
+}) => {
   if (!isOpen || !targetRef.current) return null
 
   const { top, height } = targetRef.current!.getBoundingClientRect()
 
   return createPortal(
-    <div className={styles.dropdown} style={{ top: top + height }}>
-      {children}
-    </div>,
+    <Overlay onClick={onClick}>
+      <div className={styles.dropdown} style={{ top: top + height }}>
+        {children}
+      </div>
+    </Overlay>,
     document.body
   )
 }

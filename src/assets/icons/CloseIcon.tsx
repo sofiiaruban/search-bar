@@ -10,8 +10,8 @@ const CloseIcon: FC = () => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M4.99943 5.81256L9.18686 10.0011L10 9.18916L5.81142 5.00057L10 0.813139L9.18801 0L4.99943 4.18858L0.81199 0L0 0.813139L4.18744 5.00057L0 9.18801L0.81199 10.0011L4.99943 5.81256Z"
         fill="white"
       />

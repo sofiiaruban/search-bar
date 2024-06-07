@@ -1,0 +1,10 @@
+.overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}

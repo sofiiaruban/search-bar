@@ -1,4 +1,4 @@
-import { FC, useRef, useState } from 'react'
+import { FC, useRef } from 'react'
 import Button from '../components/Button/Button'
 import SearchIcon from '../assets/icons/SearchIcon'
 import Dropdown from '../components/Dropdown/Dropdown'
@@ -8,9 +8,10 @@ import CurrencyList from '../components/CurrencyList/CurrencyList'
 import { cryptoCurrencies } from '../lib/cryptoCurrencyData'
 import RadioGroup from '../components/RadioGroup/RadioGroup'
 import styles from './Home.module.css'
+import useDropdown from '../hooks/useDropdown'
 
 const Home: FC = () => {
-  const [isDropdownOpen, setDropdownOpen] = useState(false) //,
+  const { toggleDropdown, closeDropdown, isDropdownOpen } = useDropdown()
 
   const buttonRef = useRef<HTMLButtonElement>(null)
 
@@ -20,10 +21,14 @@ const Home: FC = () => {
         ref={buttonRef}
         text="Search"
         icon={<SearchIcon />}
-        onClick={() => setDropdownOpen(!isDropdownOpen)}
+        onClick={toggleDropdown}
       />
 
-      <Dropdown isOpen={isDropdownOpen} targetRef={buttonRef}>
+      <Dropdown
+        isOpen={isDropdownOpen}
+        targetRef={buttonRef}
+        onClick={closeDropdown}
+      >
         <SearchBar
           placeholder="Search..."
           icon={<SearchIcon />}
