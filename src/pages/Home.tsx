@@ -5,7 +5,6 @@ import Dropdown from '../components/Dropdown/Dropdown'
 import SearchBar from '../components/SearchBar/SearchBar'
 import CloseIcon from '../assets/icons/CloseIcon'
 import CurrencyList from '../components/CurrencyList/CurrencyList'
-import { cryptoCurrencies } from '../lib/cryptoCurrencyData'
 import RadioGroup from '../components/RadioGroup/RadioGroup'
 import styles from './Home.module.css'
 import useDropdown from '../hooks/useDropdown'
@@ -14,7 +13,8 @@ import useSearchBar from '../hooks/useSearchBar'
 
 const Home: FC = () => {
   const { toggleDropdown, closeDropdown, isDropdownOpen } = useDropdown()
-  const { searchValue, handleSearchChange, clearSearch } = useSearchBar()
+  const { searchValue, handleSearchChange, clearSearch, currencySearchedList } =
+    useSearchBar()
 
   const buttonRef = useRef<HTMLButtonElement>(null)
 
@@ -43,7 +43,7 @@ const Home: FC = () => {
           </ButtonIcon>
         </SearchBar>
         <RadioGroup />
-        <CurrencyList currencyList={cryptoCurrencies} />
+        <CurrencyList currencyList={currencySearchedList} />
       </Dropdown>
     </header>
   )
