@@ -2,7 +2,7 @@
   width: fit-content;
   background-color: transparent;
   border: var(--border);
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
   padding-top: 1rem;
   position: absolute;
   z-index: 20;

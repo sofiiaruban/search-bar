@@ -2,29 +2,15 @@
   list-style: none;
   padding-left: 0;
   background-color: var(--black-blurred);
-  padding: 0.5rem 0.5rem 1rem 0.5rem;
+  padding: 0rem 0.5rem 1rem 0.5rem;
   margin: 0;
   color: #aba7a7;
   border-bottom-right-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
   overflow-y: scroll;
-  height: 200px;
+  height: 210px;
 }
 
 .currencyList::-webkit-scrollbar {
-  width: 6px;
-}
-
-.currencyList::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.currencyList::-webkit-scrollbar-thumb {
-  background-color: var(--hover-color);
-  height: 20px;
-  border-radius: 0.4rem;
-}
-
-.currencyList::-webkit-scrollbar-thumb:hover {
-  background-color: var(--hover-color);
+  display: none;
 }

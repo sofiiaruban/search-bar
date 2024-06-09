@@ -14,6 +14,7 @@
   --black: #000000;
   --black-blurred: #0a0909;
   --border: 1px solid #4a494a;
+  --radius: 0.4rem;
   --gap-sm: 0.5rem;
   color: var(--white);
   background-color: var(--black);

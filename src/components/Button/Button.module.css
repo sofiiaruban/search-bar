@@ -9,11 +9,12 @@
   text-transform: uppercase;
   font-size: 16px;
   padding: 0.5rem 0.4rem 0.25rem 0.4rem;
-  border-radius: 0.4rem;
+  border-radius: var(--radius);
   z-index: 10;
   box-sizing: border-box;
   border: 2px solid transparent;
   margin-left: 9.2rem;
+  cursor: pointer;
 }
 
 .button:hover {

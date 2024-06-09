@@ -5,7 +5,8 @@
   align-items: center;
   padding: 0.5rem;
   gap: var(--gap-sm);
-  border-radius: 0.4rem;
+  border-radius: var(--radius);
+  cursor: pointer;
 
   & input {
     display: none;
