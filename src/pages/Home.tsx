@@ -4,7 +4,6 @@ import SearchIcon from '../assets/icons/SearchIcon'
 import Dropdown from '../components/Dropdown/Dropdown'
 import SearchBar from '../components/SearchBar/SearchBar'
 import CloseIcon from '../assets/icons/CloseIcon'
-import CurrencyList from '../components/CurrencyList/CurrencyList'
 import RadioGroup from '../components/RadioGroup/RadioGroup'
 import styles from './Home.module.css'
 import useDropdown from '../hooks/useDropdown'
@@ -12,6 +11,7 @@ import ButtonIcon from '../components/ButtonIcon/ButtonIcon'
 import useSearchBar from '../hooks/useSearchBar'
 import useRadioGroup from '../hooks/useRadioGroup'
 import useFiltration from '../hooks/useFiltration'
+import CurrencyList from '../components/CurrencyList/CurrencyList'
 
 const Home: FC = () => {
   const { toggleDropdown, closeDropdown, isDropdownOpen } = useDropdown()
@@ -49,7 +49,10 @@ const Home: FC = () => {
           selectedValue={selectedValue}
           onChange={handleRadioChange}
         />
-        <CurrencyList currencyList={currencyList} />
+        <CurrencyList
+          currencyList={currencyList}
+          selectedValue={selectedValue}
+        />
       </Dropdown>
     </header>
   )
