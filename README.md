@@ -34,7 +34,7 @@ Access my site at  https://search-bar-seven.vercel.app/
 # Getting Started
 
 ## Clone the repository
-git clone https://github.com/sofiiaruban/search-bar.git
+git clone  https://github.com/sofiiaruban/search-bar.git
 
 ## Navigate to the project folder
 cd search-bar
