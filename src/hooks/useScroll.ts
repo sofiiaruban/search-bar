@@ -10,7 +10,9 @@ const CHUNK_SIZE = 10
 
 const useScroll = ({ currencyList, selectedValue }: UseCurrencyChunksProps) => {
   const [currentChunkIndex, setCurrentChunkIndex] = useState(0)
-  const [displayedCurrencies, setDisplayedCurrencies] = useState<CryptoCurrency[]>([])
+  const [displayedCurrencies, setDisplayedCurrencies] = useState<
+    CryptoCurrency[]
+  >([])
   const totalChunks = Math.ceil(currencyList.length / CHUNK_SIZE)
   const ulRef = useRef<HTMLUListElement | null>(null)
 
@@ -33,7 +35,7 @@ const useScroll = ({ currencyList, selectedValue }: UseCurrencyChunksProps) => {
   useEffect(() => {
     setCurrentChunkIndex(0)
     setDisplayedCurrencies([])
-  }, [selectedValue])
+  }, [currencyList, selectedValue])
 
   useEffect(() => {
     loadNextChunk()
@@ -42,7 +44,7 @@ const useScroll = ({ currencyList, selectedValue }: UseCurrencyChunksProps) => {
   return {
     ulRef,
     displayedCurrencies,
-    handleScroll,
+    handleScroll
   }
 }
 
