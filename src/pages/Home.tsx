@@ -10,11 +10,14 @@ import styles from './Home.module.css'
 import useDropdown from '../hooks/useDropdown'
 import ButtonIcon from '../components/ButtonIcon/ButtonIcon'
 import useSearchBar from '../hooks/useSearchBar'
+import useRadioGroup from '../hooks/useRadioGroup'
+import useFiltration from '../hooks/useFiltration'
 
 const Home: FC = () => {
   const { toggleDropdown, closeDropdown, isDropdownOpen } = useDropdown()
-  const { searchValue, handleSearchChange, clearSearch, currencySearchedList } =
-    useSearchBar()
+  const { selectedValue, handleRadioChange } = useRadioGroup()
+  const { searchValue, handleSearchChange, clearSearch } = useSearchBar()
+  const { currencyList } = useFiltration({ selectedValue, searchValue })
 
   const buttonRef = useRef<HTMLButtonElement>(null)
 
@@ -42,8 +45,11 @@ const Home: FC = () => {
             <CloseIcon />
           </ButtonIcon>
         </SearchBar>
-        <RadioGroup />
-        <CurrencyList currencyList={currencySearchedList} />
+        <RadioGroup
+          selectedValue={selectedValue}
+          onChange={handleRadioChange}
+        />
+        <CurrencyList currencyList={currencyList} />
       </Dropdown>
     </header>
   )
