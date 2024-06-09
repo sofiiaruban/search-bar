@@ -1,30 +1,48 @@
-# React + TypeScript + Vite
+# Project Title
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h3>Search Bar App</h3>
 
-Currently, two official plugins are available:
+# Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Project Title](#project-title)
+- [Table of Contents](#table-of-contents)
+- [About](#about)
+- [Technologies](#technologies)
+- [Demo link](#demo-link)
+- [Screenshots](#screenshots)
+- [Getting Started](#getting-started)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+# About 
+The app allows users to search for cryptocurrency <br/>
+Key features: 
+- Search and Clear Search
+- Filter by All and Favorites
+  
+# Technologies
+React, TS
 
-- Configure the top-level `parserOptions` property like this:
+# Demo link 
+Access my site at  https://search-bar-seven.vercel.app/
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+# Screenshots
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Search
+![searchsnap](https://github.com/sofiiaruban/search-bar/assets/37212452/1d3a4944-8b89-49f0-aed6-d38c423739b3)
+## Filter
+![filterw](https://github.com/sofiiaruban/search-bar/assets/37212452/97c8da9c-cd64-4ae8-a3ab-dcaedefa2aa5)
+# Getting Started
+
+## Clone the repository
+git clone https://github.com/sofiiaruban/search-bar.git
+
+## Navigate to the project folder
+cd search-bar
+
+## Install dependencies
+npm install
+
+## Run the app
+npm run dev
+
+
