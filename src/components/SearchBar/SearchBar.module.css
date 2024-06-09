@@ -1,14 +1,16 @@
 .searchBar {
   display: flex;
-  gap: 1rem;
+  gap: var(--gap-sm);
   margin-bottom: 1rem;
   font-size: 18px;
-  padding: 0 1rem;
+  padding: 0 1rem 1rem 1rem;
+  border-bottom: var(--border);
 
   & input {
     background-color: transparent;
     border: none;
-    color: #ffffff;
+    color: var(--white);
     outline: none;
+    padding: 0;
   }
 }

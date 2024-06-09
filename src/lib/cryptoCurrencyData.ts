@@ -34,7 +34,6 @@ export const cryptoCurrencies: CryptoCurrency[] = [
   { id: 27, currencyName: 'NFT', isFavorite: true },
   { id: 28, currencyName: 'B2M', isFavorite: false },
   { id: 29, currencyName: 'ANTEX', isFavorite: true },
-  { id: 30, currencyName: '', isFavorite: false },
   { id: 31, currencyName: 'RPX', isFavorite: true },
   { id: 32, currencyName: 'MOTHER', isFavorite: false },
   { id: 33, currencyName: 'GYEN', isFavorite: true },

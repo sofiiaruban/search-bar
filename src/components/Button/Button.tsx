@@ -21,7 +21,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
       >
         <span>{icon}</span>
-        <span>{text}</span>
+        <span className={styles.text}>{text}</span>
       </button>
     )
   }

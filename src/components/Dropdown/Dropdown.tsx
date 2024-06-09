@@ -26,7 +26,7 @@ const Dropdown: FC<DropdownProps> = ({
     <Overlay onClick={onClick}>
       <div
         className={styles.dropdown}
-        style={{ top: top + height + '5px' }}
+        style={{ top: top + height + '2px' }}
         onClick={dropdownPropagationHandle}
       >
         {children}

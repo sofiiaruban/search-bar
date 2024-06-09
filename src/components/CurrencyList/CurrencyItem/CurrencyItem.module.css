@@ -2,5 +2,10 @@
   display: flex;
   justify-content: start;
   align-items: center;
-  gap: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  gap: var(--gap-sm);
+}
+.currencyItem:hover {
+  background-color: var(--hover-color);
 }

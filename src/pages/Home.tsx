@@ -1,4 +1,4 @@
-import { FC, useRef } from 'react'
+import { FC, useRef, useState } from 'react'
 import Button from '../components/Button/Button'
 import SearchIcon from '../assets/icons/SearchIcon'
 import Dropdown from '../components/Dropdown/Dropdown'
@@ -9,16 +9,19 @@ import styles from './Home.module.css'
 import useDropdown from '../hooks/useDropdown'
 import ButtonIcon from '../components/ButtonIcon/ButtonIcon'
 import useSearchBar from '../hooks/useSearchBar'
-import useRadioGroup from '../hooks/useRadioGroup'
 import useFiltration from '../hooks/useFiltration'
 import CurrencyList from '../components/CurrencyList/CurrencyList'
+import SearchIconSmall from '../assets/icons/SearchIconSmall'
 
 const Home: FC = () => {
   const { toggleDropdown, closeDropdown, isDropdownOpen } = useDropdown()
-  const { selectedValue, handleRadioChange } = useRadioGroup()
   const { searchValue, handleSearchChange, clearSearch } = useSearchBar()
+  const [selectedValue, setSelectedValue] = useState('all')
   const { currencyList } = useFiltration({ selectedValue, searchValue })
 
+  const handleRadioChange = (value: string) => {
+    setSelectedValue(value)
+  }
   const buttonRef = useRef<HTMLButtonElement>(null)
 
   return (
@@ -37,7 +40,7 @@ const Home: FC = () => {
       >
         <SearchBar
           placeholder="Search..."
-          icon={<SearchIcon />}
+          icon={<SearchIconSmall />}
           value={searchValue}
           onChange={handleSearchChange}
         >

@@ -3,18 +3,25 @@ import { FC } from 'react'
 const StarIcon: FC = () => {
   return (
     <svg
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
+      width="13"
+      height="13"
+      viewBox="0 0 13 13"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M12.2786 7.50286L10 0L7.72143 7.50286H0L6.24714 12.36L3.92857 20L10 15.2786L16.0714 20L13.7529 12.36L20 7.50286H12.2786ZM5.57429 9.46H8.95429L10 6.02L11.0457 9.46286H14.4271L11.6914 11.5914L12.7357 15.0329L10 12.9029L7.26429 15.0314L8.30857 11.5886L5.57429 9.46Z"
-        fill="#ABA7A7"
-      />
+      <g clip-path="url(#clip0_616_11)">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M7.98109 4.87686L6.5 0L5.01893 4.87686H0L4.06064 8.034L2.55357 13L6.5 9.93109L10.4464 13L8.93938 8.034L13 4.87686H7.98109ZM3.62329 6.149H5.82029L6.5 3.913L7.1797 6.15086H9.37761L7.59941 7.53441L8.2782 9.77138L6.5 8.38688L4.72179 9.77041L5.40057 7.53259L3.62329 6.149Z"
+          fill="white"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_616_11">
+          <rect width="13" height="13" fill='#ABA7A7' />
+        </clipPath>
+      </defs>
     </svg>
   )
 }

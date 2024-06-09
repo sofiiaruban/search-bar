@@ -1,5 +1,4 @@
 import { ChangeEvent, useMemo, useState } from 'react'
-import { debounce } from '../helpers/debounce'
 
 interface SearchBarHookReturnType {
   searchValue: string
@@ -32,3 +31,19 @@ const useSearchBar = (): SearchBarHookReturnType => {
 }
 
 export default useSearchBar
+
+const debounce = <T extends (...args: string[]) => void>(
+  func: T,
+  wait: number
+): ((...args: Parameters<T>) => void) => {
+  let timeout: ReturnType<typeof setTimeout>
+
+  return function executedFunction(...args: Parameters<T>): void {
+    const later = () => {
+      clearTimeout(timeout)
+      func(...args)
+    }
+    clearTimeout(timeout)
+    timeout = setTimeout(later, wait)
+  }
+}

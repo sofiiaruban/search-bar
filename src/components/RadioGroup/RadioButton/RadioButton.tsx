@@ -23,7 +23,7 @@ const RadioButton: FC<RadioButtonProps> = ({
   }
 
   return (
-    <label className={styles.radio}>
+    <label className={`${styles.radio} ${checked ? styles.active : ''}`}>
       <input
         type="radio"
         name={name}
@@ -31,8 +31,8 @@ const RadioButton: FC<RadioButtonProps> = ({
         checked={checked}
         onChange={handleOnChange}
       />
-      <span>{icon}</span>
-      <span className={checked ? styles.active : ''}>{label}</span>
+      {icon}
+      <span>{label}</span>
     </label>
   )
 }

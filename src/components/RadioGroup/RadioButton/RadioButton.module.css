@@ -1,7 +1,11 @@
 .radio {
   text-transform: uppercase;
   display: flex;
-  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  gap: var(--gap-sm);
+  border-radius: 0.4rem;
 
   & input {
     display: none;
@@ -9,5 +13,10 @@
 }
 
 .active {
+  background-color: var(--hover-color);
   font-weight: 600;
+}
+
+.radio:hover {
+  background-color: var(--hover-color);
 }

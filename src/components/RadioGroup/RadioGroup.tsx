@@ -10,7 +10,6 @@ interface RadioGroupProps {
 }
 
 const RadioGroup: FC<RadioGroupProps> = ({ selectedValue, onChange }) => {
-  console.log(selectedValue)
   return (
     <div className={styles.radioGroup}>
       <RadioButton
